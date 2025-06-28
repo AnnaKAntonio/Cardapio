@@ -1,0 +1,501 @@
+/* Importar fontes - Certifique-se de que este link também está no seu HTML <head> */
+/* @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&family=Great+Vibes&display=swap"); */
+
+body {
+  font-family: "Cormorant Garamond", serif; /* Usando a fonte do seu exemplo */
+  background: #f8f5f2; /* Areia muito clara, quase branco cremoso - como no seu exemplo */
+  color: #333333; /* Cinza escuro para texto principal */
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Great Vibes", cursive; /* Usando a fonte do seu exemplo */
+  font-size: 4rem; /* Tamanho maior para o título principal */
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  padding-bottom: 15px;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Gradiente para o texto do título principal (Ouro e Azul Royal) */
+  background: linear-gradient(
+    to right,
+    #d4af37,
+    #4169e1
+  ); /* Ouro e Azul Royal */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback for browsers that don't support text-fill-color */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  border-bottom: 3px solid #d4af37; /* Linha dourada sólida abaixo do título */
+}
+
+h2 {
+  font-family: "Great Vibes", cursive; /* Usando a fonte do seu exemplo */
+  font-size: 3.2rem; /* Maior para melhor visualização */
+  color: #4169e1; /* Azul Royal para os títulos de seção */
+  border-bottom: 2px dashed #d4af37; /* Linha tracejada Dourada */
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* --- Estilos para as abas (replicando a imagem e suas cores) --- */
+.tabs-wrapper {
+  max-width: 960px; /* Largura ajustada para o exemplo */
+  margin: 40px auto 0 auto;
+  position: relative;
+  background-color: transparent; /* Não tem fundo direto, a linha cria a base */
+  border-top-left-radius: 25px; /* Arredondamento do container das abas */
+  border-top-right-radius: 25px;
+  /* Box-shadow será aplicado ao content-container para dar o efeito de profundidade */
+}
+
+.tabs-nav {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px; /* Padding horizontal para não colar nas bordas */
+  position: relative;
+  z-index: 2; /* Garante que os botões fiquem acima da linha */
+}
+
+.tab-button {
+  background-color: #f8f5f2; /* Fundo areia clara para abas inativas (como o body) */
+  border: 1px solid #e0e0e0; /* Borda prata clara para as abas inativas */
+  border-bottom: none; /* Remove a borda inferior para fundir com a linha */
+  padding: 15px 35px; /* Padding generoso */
+  font-family: "Cormorant Garamond", serif; /* Fonte do seu exemplo */
+  font-size: 1.35em;
+  color: #4169e1; /* Azul Royal para texto da aba inativa */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  border-top-left-radius: 18px; /* Arredondamento nas bordas superiores */
+  border-top-right-radius: 18px;
+  margin: 0 3px; /* Espaçamento entre as abas */
+  position: relative;
+  top: 1px; /* Ajusta para sobrepor ligeiramente a linha */
+  white-space: nowrap; /* Impede que o texto quebre */
+}
+
+.tab-button:hover {
+  background-color: #fff0f5; /* Rosa claro no hover */
+  color: #daa520; /* Ouro no hover */
+  border-color: #daa520; /* Borda dourada no hover */
+}
+
+.tab-button.active {
+  background-color: #fffbf0; /* Fundo quase ouro para a aba ativa (como no seu exemplo) */
+  border-color: #d4af37; /* Borda dourada forte para a aba ativa */
+  color: #d4af37; /* Texto dourado forte para a aba ativa */
+  font-weight: 700; /* Mais negrito */
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para "levantar" */
+  z-index: 3;
+  padding-bottom: 16px; /* Ajuste para compensar o top: 1px */
+}
+
+.tabs-line {
+  width: calc(
+    100% - 40px
+  ); /* Ajusta a largura da linha para corresponder ao padding do tabs-nav */
+  height: 4px; /* Espessura da linha */
+  background-color: #daa520; /* Dourado da linha */
+  position: absolute;
+  bottom: -1px; /* Posiciona a linha exatamente no fim do wrapper, pode ser 0 ou -1px para evitar frestas */
+  left: 20px; /* Alinha com o padding do tabs-nav */
+  right: 20px;
+  z-index: 1; /* Fica abaixo dos botões */
+  border-bottom-left-radius: 20px; /* Arredondamento da linha */
+  border-bottom-right-radius: 20px;
+}
+
+.tabs-content-container {
+  max-width: 960px;
+  margin: -1px auto 40px auto; /* Ajuste a margem superior para a linha se encaixar */
+  background: white; /* Fundo do container do conteúdo, como o "container" do seu exemplo */
+  padding: 30px 40px;
+  border-radius: 0 0 25px 25px; /* Apenas as bordas inferiores arredondadas */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra do conteúdo */
+  min-height: 400px; /* Altura mínima para o container de conteúdo */
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* --- Estilos do Cardápio (Cores Rosa, Ouro, Prata, Azul) --- */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+li {
+  background: #ffffff;
+  margin: 20px 0;
+  padding: 25px;
+  border-radius: 18px;
+  border: 3px solid #ffc0cb; /* Rosa claro para as bordas dos itens */
+  box-shadow: 0 8px 20px rgba(255, 192, 203, 0.2); /* Sombra rosa suave */
+  font-size: 1.25rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-color: #ffd700; /* Ouro brilhante */
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-out;
+}
+
+li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(255, 192, 203, 0.3);
+  border-color: #ff69b4; /* Rosa choque no hover */
+}
+
+li:hover::before {
+  transform: translateX(0);
+}
+
+.preco {
+  color: #d4af37; /* Ouro para o preço */
+  font-weight: bold;
+  font-size: 1.4em;
+  min-width: 140px;
+  text-align: right;
+  padding-left: 25px;
+  text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.subitens {
+  margin-top: 18px;
+  padding-left: 30px;
+  font-size: 1.05em;
+  color: #555555;
+  border-top: 1px dashed #c0c0c0; /* Linha tracejada prata */
+  padding-top: 12px;
+}
+
+.subitens li {
+  background: #f0f0f0; /* Prata muito claro para subitens */
+  border: none;
+  margin: 10px 0;
+  padding: 12px 15px;
+  border-radius: 12px;
+  box-shadow: none;
+  font-size: 1em;
+  display: list-item;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+.subitens li:hover {
+  transform: none;
+  box-shadow: none;
+  background-color: #d3d3d3; /* Prata mais evidente no hover dos subitens */
+  cursor: pointer;
+}
+
+/* --- Estilos da Nova Seção de Pagamento --- */
+.payment-options {
+  text-align: center; /* Centraliza o conteúdo principal */
+  margin-top: 30px;
+}
+
+.payment-options h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  color: #d4af37; /* Ouro para o título da seção de QR Code */
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #e0e0e0; /* Linha tracejada prata */
+  padding-bottom: 10px;
+  display: inline-block; /* Para a linha cobrir apenas o texto */
+}
+
+.payment-options p {
+  font-size: 1.15rem;
+  color: #555555;
+  max-width: 600px;
+  margin: 15px auto; /* Centraliza parágrafos */
+}
+
+.qr-code-section {
+  background: #fdfdfd; /* Fundo levemente mais claro para a seção do QR Code */
+  border: 2px solid #ffc0cb; /* Borda rosa clara */
+  border-radius: 15px;
+  padding: 25px;
+  margin: 30px auto;
+  max-width: 350px; /* Tamanho máximo para a caixa do QR Code */
+  box-shadow: 0 5px 15px rgba(255, 192, 203, 0.15); /* Sombra rosa suave */
+}
+
+.qr-code-image {
+  width: 100%; /* Ocupa 100% da largura da sua div pai (qr-code-section) */
+  max-width: 250px; /* Tamanho máximo do QR Code para não ficar gigante */
+  height: auto;
+  display: block; /* Remove espaço extra abaixo da imagem */
+  margin: 0 auto 20px auto; /* Centraliza a imagem e adiciona margem inferior */
+  border: 3px solid #daa520; /* Borda dourada para o QR Code */
+  border-radius: 8px; /* Pequeno arredondamento */
+}
+
+.qr-instructions,
+.qr-instructions-alt {
+  font-size: 1.05rem;
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+.pix-key {
+  background-color: #f0f0f0; /* Fundo prateado para a chave Pix */
+  border: 1px solid #d3d3d3; /* Borda prata */
+  border-radius: 8px;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  color: #333333;
+  margin-top: 20px;
+}
+
+.pix-key-label {
+  font-weight: 600;
+  color: #4169e1; /* Azul Royal para o label da chave */
+  margin-right: 10px;
+}
+
+.pix-key-value {
+  flex-grow: 1;
+  text-align: left;
+  word-break: break-all; /* Garante que a chave Pix não vaze */
+  font-weight: 400;
+}
+
+.copy-pix-button {
+  background-color: #ff69b4; /* Rosa choque para o botão de copiar */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-left: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.copy-pix-button:hover {
+  background-color: #ff007f; /* Rosa mais escuro no hover */
+  transform: translateY(-2px);
+}
+
+.qr-note {
+  font-size: 0.95rem;
+  color: #888888;
+  margin-top: 25px;
+  line-height: 1.5;
+}
+
+/* --- Responsividade para Celulares (max-width: 768px) --- */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+  }
+
+  h2::before,
+  h2::after {
+    width: 30px;
+    left: calc(50% - 70px);
+    right: calc(50% - 70px);
+  }
+
+  .tabs-wrapper {
+    margin: 25px auto 0 auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .tabs-nav {
+    flex-wrap: wrap;
+    padding: 0 10px;
+    justify-content: space-around;
+  }
+
+  .tab-button {
+    flex: 1 1 auto;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    margin: 5px 3px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    top: 0;
+    min-width: 100px; /* Ajustado */
+    text-align: center;
+  }
+
+  .tab-button.active {
+    padding-bottom: 11px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .tabs-line {
+    left: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .tabs-content-container {
+    padding: 25px 20px;
+    border-radius: 0 0 15px 15px;
+    margin-bottom: 25px;
+    min-height: 250px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 15px;
+  }
+
+  li::before {
+    width: 4px;
+  }
+
+  .preco {
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 0;
+    font-size: 1.2em;
+    width: 100%;
+  }
+
+  .subitens {
+    padding-left: 20px;
+    margin-top: 12px;
+  }
+
+  .subitens li {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.95em;
+  }
+
+  /* Adaptação da seção de pagamento para mobile */
+  .qr-code-section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 280px; /* Reduz o tamanho máximo do container do QR Code */
+  }
+
+  .qr-code-image {
+    max-width: 200px; /* Reduz o tamanho máximo da imagem do QR Code */
+    margin-bottom: 15px;
+  }
+
+  .pix-key {
+    flex-direction: column; /* Empilha a chave Pix e o botão */
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .pix-key-label {
+    margin-bottom: 5px;
+    margin-right: 0;
+  }
+
+  .copy-pix-button {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%; /* Botão ocupa a largura total */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h2::before,
+  h2::after {
+    width: 20px;
+    left: calc(50% - 50px);
+    right: calc(50% - 50px);
+  }
+  .tab-button {
+    font-size: 1em;
+    padding: 8px 10px;
+    margin: 3px;
+    min-width: unset;
+  }
+  .tabs-nav {
+    padding: 0 5px;
+  }
+  .tabs-line {
+    left: 5px;
+    right: 5px;
+    width: calc(100% - 10px);
+  }
+  .tabs-content-container {
+    padding: 15px;
+  }
+  li {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+  .preco {
+    font-size: 1.1em;
+  }
+  .qr-code-section {
+    max-width: 220px; /* Ajuste final para telas muito pequenas */
+    padding: 15px;
+  }
+  .qr-code-image {
+    max-width: 160px; /* Ajuste final para telas muito pequenas */
+  }
+}
