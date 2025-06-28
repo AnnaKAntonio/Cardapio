@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cardápio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <h1>Cardápio</h1>
+
+    <div class="tabs-wrapper">
+        <div class="tabs-nav">
+            <button class="tab-button active" data-tab="doces">Doces</button>
+            <button class="tab-button" data-tab="combos">Combos Especiais</button>
+            <button class="tab-button" data-tab="pagamento">Pagamento</button>
+        </div>
+        <div class="tabs-line"></div>
+    </div>
+
+
+    <div class="tabs-content-container">
+        <div class="tab-content active" id="doces">
+            <h2>Doces</h2>
+            <ul>
+                <li>Camafeu (15g - tamanho festa) <span class="preco">R$ 130,00 o cento</span></li>
+                <li>Camafeu (unidade) <span class="preco">R$ 3,50 Unidade</span></li>
+                <li>Bolo no pote 200g <span class="preco">R$ 10,00 Unidade</span></li>
+                <li>Bolo no pote (sabores variados) <span class="preco">R$ 10,00 Unidade</span></li>
+                <li>Tortinha (sabores variados) <span class="preco">R$ 8,00 Unidade</span></li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="combos">
+            <h2>Combos Especiais</h2>
+            <ul>
+                <li>
+                    Combo Brigadeiros Gourmet (12g cada) <span class="preco">R$ 100,00</span>
+                    <ul class="subitens">
+                        <li>Beijinho</li>
+                        <li>Cajuzinho</li>
+                        <li>Ninho</li>
+                        <li>Nutella</li>
+                        <li>Morango</li>
+                        <li>Limão</li>
+                        <li>Café</li>
+                        <li>Maracujá</li>
+                    </ul>
+                </li>
+
+                <li>
+                    Combo Tortinhas 140g <span class="preco">R$ 8,00 cada</span>
+                    <ul class="subitens">
+                        <li>Ninho</li>
+                        <li>Nutella</li>
+                        <li>Morango</li>
+                        <li>Abacaxi</li>
+                        <li>Nozes</li>
+                        <li>Coco</li>
+                    </ul>
+                </li>
+
+                <li>
+                    Combo Festivo - Mix de Doces <span class="preco">R$ 180,00</span>
+                    <ul class="subitens">
+                        <li>50 Brigadeiros Gourmet (sabores a escolher)</li>
+                        <li>20 Tortinhas Pequenas (sabores a escolher)</li>
+                        <li>10 Bolos no Pote (sabores a escolher)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content" id="pagamento">
+            <h2>Formas de Pagamento</h2>
+            <div class="payment-options">
+                <p>Facilite seu pedido com nosso pagamento rápido via QR Code Pix! Você também pode pagar com Cartão de
+                    Crédito/Débito na retirada ou entrega.</p>
+
+                <h3>Pagar com Pix via QR Code</h3>
+                <div class="qr-code-section">
+                    <img src="caminho/para/seu/qr-code-pix.png" alt="QR Code Pix para Pagamento" class="qr-code-image">
+                    <p class="qr-instructions">Aponte a câmera do seu celular para o QR Code acima e finalize o
+                        pagamento via Pix.</p>
+                    <p class="qr-instructions-alt">Ou, se preferir, copie e cole a chave Pix:</p>
+                    <p class="pix-key">
+                        <span class="pix-key-label">Chave Pix:</span>
+                        <span class="pix-key-value">seuemail@exemplo.com</span>
+                        <button class="copy-pix-button">Copiar Chave</button>
+                    </p>
+                    <p class="qr-note">Se o valor for fixo para um item, ele será pré-definido. Para pedidos
+                        personalizados, o valor será informado no momento da retirada/entrega ou após a finalização do
+                        pedido. Contate-nos para finalizar seu pedido.</p>
+                </div>
+
+                <h3>Outras Formas de Pagamento</h3>
+                <ul>
+                    <li>Cartão de Crédito (Visa, Mastercard, Elo)</li>
+                    <li>Cartão de Débito (Visa, Mastercard, Elo)</li>
+                    <li>Dinheiro (apenas para troco pequeno, favor avisar antecipadamente)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
